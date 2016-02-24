@@ -6,13 +6,17 @@
     
   </head>
   <body>
-
-    <%= render 'layouts/navigation' %>
-
-    <%= bootstrap_flash %>
     
-    <%= yield %>
-
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    
+    <main>
+      <%= bootstrap_flash %>
+    
+      <%= yield %>
+    </main>
+    
     <%= render 'layouts/footer' %>
 
   </body>
