@@ -7,16 +7,28 @@
   </head>
   <body>
     
+    <!--Navigation-->
     <header>
       <%= render 'layouts/navigation' %>
     </header>
     
     <main>
-      <%= bootstrap_flash %>
-    
-      <%= yield %>
+      <div class="container">
+        <div class="col-sm-12 col-lg-10 col-lg-offset-1">
+          
+          <!--Flash Alerts-->
+          <div class="text-center">
+            <%= bootstrap_flash %>
+          </div>
+          
+          <!--Yield Views-->
+          <%= yield %>
+          
+        </div>
+      </div>
     </main>
     
+    <!--Footer-->
     <%= render 'layouts/footer' %>
 
   </body>
