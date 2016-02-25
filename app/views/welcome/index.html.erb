@@ -1,38 +1,24 @@
-<!--If Logged In-->
-<% if current_user %>
-  
-  <div class="row">
-    <div class="col-lg-12 text-center">
-      <h3>Welcome to Photo App!</h3>
-    </div>
-  </div>
-  
-<!--If Not Logged In-->
-<% else %>
+<!--Homepage Image-->
+<%= image_tag("home.png", :alt => "Photo App", class: "img-responsive center-block home-image") %>
 
-  <!--Homepage Image-->
-  <%= image_tag("home.png", :alt => "Photo App", class: "img-responsive center-block home-image") %>
-  
-  <hr/>
-  
-  <!--Get Started Heading-->
-  <div class="col-sm-12 col-lg-8 col-lg-offset-2 jumbotron text-center">
-    <h2>Get Started</h2>
-  </div>
-  
-  <!--Premium Plan Box-->
-  <div class="col-sm-12 col-lg-4 col-lg-offset-4 plan well text-center">
-    <h3>Premium Plan</h3>
-    <p>Price: $10</p>
-    <br/>
-    <ul>
-      <li id='extra'>Unlimited projects</li>
-      <li>Unlimited Image Uploads</li>
-      <li>Responsive design</li>
-      <li>Access anywhere</li>
-      <li>&nbsp;</li>
-    </ul>
-    <%= link_to 'Sign Up', new_user_registration_path(plan: 'premium'), class: 'btn btn-lg btn-success btn-block sign-up' %>
-  </div>
-  
-<% end %>
+<hr/>
+
+<!--Get Started Heading-->
+<div class="col-sm-12 col-lg-8 col-lg-offset-2 jumbotron text-center">
+  <h2>Get Started</h2>
+</div>
+
+<!--Premium Plan Box-->
+<div class="col-sm-12 col-lg-4 col-lg-offset-4 plan well text-center">
+  <h3>Premium Plan</h3>
+  <p>Price: $10</p>
+  <br/>
+  <ul>
+    <li id='extra'>Unlimited projects</li>
+    <li>Unlimited Image Uploads</li>
+    <li>Responsive design</li>
+    <li>Access anywhere</li>
+    <li>&nbsp;</li>
+  </ul>
+  <%= link_to 'Sign Up', new_user_registration_path(plan: 'premium'), class: 'btn btn-lg btn-success btn-block sign-up' %>
+</div>
