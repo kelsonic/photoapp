@@ -32,3 +32,31 @@ text-align: center;
 .red-text {
   color: red;
 }
+
+.well {
+  margin: 10px 10px 10px 10px;
+}
+
+.well-image {
+  background-color: #000;
+  border: 2px solid #999;
+  border-radius: 10px;
+}
+
+.image-name {
+  a {
+    color: white;
+    &:hover {
+      text-decoration: none;
+      color: #999;
+    }
+  }
+}
+
+.image-date {
+  
+}
+
+.action-buttons {
+  padding-bottom: 20px;
+}

@@ -9,31 +9,35 @@
         <%= link_to "Upload a Photo", new_image_path, class: 'btn btn-success btn-lg' %>
       </div>
       
-      <div class="row text-center">
+      <div class="col-md-10 col-md-offset-1">
         <% @images.each do |image| %>
-          <div class="col-sm-12">
-            <!--Image-->
-            <%= image_tag(image.picture.url, size: "350", class: "img-responsive center-block") %>
-            
+          <div class="col-md-12 well well-image text-center">
             <!--Image Description-->
-            <p class="image-description"><%= link_to image.name, image_path(image) %></p>
+            <h2 class="image-name"><%= link_to image.name, image_path(image) %></h2>
             
+            <p class="image-date">Created on <%= image.created_at %></p>
+            
+            <!--Action Buttons if Image is Current User's Image-->
             <% if image.user == current_user %>
-              <%= link_to "Edit",
-                              edit_image_path(image), :class => 'btn btn-warning' %>
-              <%= link_to "Delete",
-                              image_path(image),
-                              :method => :delete,
-                              :data => { :confirm => t('.confirm',
-                              :default => t("helpers.links.confirm",
-                              :default => 'Are you sure?')) },
-                              :class => 'btn btn-danger' %>
+              <div class="action-buttons">
+                <%= link_to "Edit",
+                                edit_image_path(image), :class => 'btn btn-warning' %>
+                <%= link_to "Delete",
+                                image_path(image),
+                                :method => :delete,
+                                :data => { :confirm => t('.confirm',
+                                :default => t("helpers.links.confirm",
+                                :default => 'Are you sure?')) },
+                                :class => 'btn btn-danger' %>
+              </div>
             <% end %>
+            
+            <!--Image-->
+            <%= image_tag(image.picture.url, class: "img-responsive center-block") %>
+              
           </div>
         <% end %>
       </div>
-      
-      
       
     </div>
   </div>
