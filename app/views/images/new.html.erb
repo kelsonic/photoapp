@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-lg-12">
       <%- model_class = Image -%>
-      <div class="page-header">
-        <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+      <div class="page-header text-center">
+        <h1>Upload a Photo</h1>
       </div>
       <%= render :partial => 'form' %>
     </div>

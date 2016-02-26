@@ -33,7 +33,7 @@
             <% end %>
             
             <!--Image-->
-            <%= image_tag(image.picture.url, class: "img-responsive center-block") %>
+            <%= link_to (image_tag(image.picture.url, class: "img-responsive center-block")), image_path(image) %>
               
           </div>
         <% end %>
